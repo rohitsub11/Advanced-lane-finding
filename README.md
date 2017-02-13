@@ -125,4 +125,8 @@ Here's a [link to my video result](Project_video_output.mp4)
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-**Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+This project was a very interesting project since it needed a lot of fine tuning of parameters. I created 2 python notebooks because at one point I had tweaked my parameters a lot that I lost track and had to restart :). 
+
+Once the pipeline was tweaked and performing well on the test images, I tested it out on the project_video.mp4 video and it performed well on this video as well. However, I did observe that the lane prediction was challenged when a shadow was introduced on the road. So I tried running the pipeline on only this frame and fair enough the lane prediction was off.
+
+I noticed that on the Challenge_video.mp4, there was a line in the middle of the lane, this would threw the lane predition off. The harder_challenge_video.mp4 vidwo had a lot of reflections and shadows which completely threw the prediction algorithm off. Some sort of shaddow correction, reflection correction and filter for lane prediction needs to be implemented that are more robust.
