@@ -34,19 +34,19 @@ I start by preparing "object points", which will be the (x, y, z) coordinates of
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
-![Original, distorted image][test1.jpg]
+![Original, distorted image](test1.jpg)
 
 ###Pipeline (single images)
 
 ####1. Provide an example of a distortion-corrected image.
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-![Distortion correction][output_images/test_undist_2.jpg]
+![Distortion correction](output_images/test_undist_2.jpg)
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 I used a combination of color and gradient thresholds to generate a binary image as called out in ** color_thresholding ** and ** abs_sobel_thresholding ** functions in the same ipynb.  Here's an example of my output for this step.
 
-![color thresholding][output_images/color_thresh.jpg]
-![sobel thresholding][output_images/sobel_thresh.jpg]
-![combined thresholding][output_images/combined_thresh.jpg]
+![color thresholding](output_images/color_thresh.jpg)
+![sobel thresholding](output_images/sobel_thresh.jpg)
+![combined thresholding](output_images/combined_thresh.jpg)
 
 ####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -88,13 +88,13 @@ This resulted in the following source and destination points:
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![warped image][output_images/birds_eye_view.jpg]
+![warped image](output_images/birds_eye_view.jpg)
 
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
 Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
 
-![Found lane line image][output_images/Window_lane_finding.jpg]
+![Found lane line image](output_images/Window_lane_finding.jpg)
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -104,7 +104,7 @@ I did this in lines # through # in my code in `my_other_file.py`
 
 I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
 
-![lane on road][output_images/detected_lane_mask.jpg]
+![lane on road](output_images/detected_lane_mask.jpg)
 
 ---
 
