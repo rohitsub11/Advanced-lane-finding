@@ -41,6 +41,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 ####1. Provide an example of a distortion-corrected image.
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
+![Distortion correction](output_images/test_undist_1.jpg)
 ![Distortion correction](output_images/test_undist_2.jpg)
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 I used a combination of color and gradient thresholds to generate a binary image as called out in **color_thresholding** and **abs_sobel_thresholding** functions in the same ipynb.  Here's an example of my output for this step.
@@ -101,18 +102,12 @@ The output of all this is a set of **(x,y)** values, the windows are drawn over 
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-**I did this in my Jupyter Notebook in the functions `computePositionError()`, `computeLaneCurvature()`, and `computeLaneCurvaturePx()`.  
-
-**I computed the position error in the `computePositionError()` function by measuring the difference between the image center (image width divided by 2) and the apparent lane center. The apparent lane center is computed by finding the average of the nearest lane pixel on the left and right.  For instance, if the the left lane's closest key point was at `x=200` and the right lane's closest key point was at `x=1000`, then the lane center would be `x=600`.  Since the image width is 1280 pixels wide, the image center is at `x=640`.  This implies that the image center is 40 pixels to the right of the lane center.  I used the conversion ratio to convert this pixel difference into meters.
-
-**Next, I compute the lane curvature in real-space (meters) using the `computeLaneCurvature()` function, which is based on the Udacity lecture material.
-
-**Next, I compute the lane curvature in pixel space (pixels) using the `computeLaneCurvaturePx()` function.
+I did this in my Jupyter Notebook in the functions `measure_curvature`. I computed the lane curvature in real-space (meters) by accepting an input to the variable `pixel` as `false` and in pixel space (pixels) using the input to the same variable as `True`.
 
 
 ####6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-**I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+I implemented this step in the `draw_lines_on_road` function.  Here is an example of my result on a test image:
 
 ![lane on road](output_images/detected_lane_mask.jpg)
 
