@@ -117,6 +117,9 @@ I implemented this step in the `draw_lines_on_road` function.  Here is an exampl
 
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
+Here's an example of what my pipeline would output on an image:
+![pipeline image](output_images/Pipeline_result.jpg)
+
 Here's a [link to my video result](Project_video_output.mp4)
 
 ---
