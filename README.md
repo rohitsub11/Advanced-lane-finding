@@ -58,8 +58,8 @@ I used a combination of color and gradient thresholds to generate a binary image
 ![combined_color_threshold1](output_images/combined_color_thresh1.jpg)
 ![combined_color_threshold2](output_images/combined_color_thresh2.jpg)
 ![sobel thresholding](output_images/sobel_thresh.jpg)
-![combined thresholding1](output_images/combined_thresh1.jpg)
-![combined thresholding2](output_images/combined_thresh2.jpg)
+![combined thresholding1](output_images/combined_thresh_1.jpg)
+![combined thresholding2](output_images/combined_thresh_2.jpg)
 
 ####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
