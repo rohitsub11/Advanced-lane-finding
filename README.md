@@ -36,6 +36,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 ![Original, distorted chess board](calibration2.jpg)
 ![Original, distorted image](test1.jpg)
+![Original, distorted image](frame1035.jpg)
 
 ###Pipeline (single images)
 
@@ -43,12 +44,22 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
 ![Distortion correction](output_images/test_undist_1.jpg)
 ![Distortion correction](output_images/test_undist_2.jpg)
-####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
-I used a combination of color and gradient thresholds to generate a binary image as called out in **color_thresholding** and **abs_sobel_thresholding** functions in the same ipynb.  Here's an example of my output for this step.
+![Distortion correction](output_images/test_undist_3.jpg)
 
-![color thresholding](output_images/color_thresh.jpg)
+####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
+I used a combination of color and gradient thresholds to generate a binary image as called out in **color_thresholding** and **abs_sobel_thresholding** functions in the same ipynb. I tried a few color spaces and thresholdings, including l and s thresholds in HLS color space, s and v thresholds in HSV color space, L and b thresholds in LAB color space. I found that the L and b thresholds worked best for me. b is amazing to identify the yellow lines, though I am still struggling a bit with shadows from trees. I combined the L and b combined color image to a sobel x transform to acheive good identification of both left and right lines. Here's an example of my output for this step.
+
+![s_in_hls](output_images/s_in_hls.jpg)
+![l_in_hls](output_images/l_in_hls.jpg)
+![s_in_hsv](output_images/s_in_hsv.jpg)
+![v_in_hsv](output_images/v_in_hsv.jpg)
+![L_in_Lab](output_images/L_in_Lab.jpg)
+![b_in_Lab](output_images/b_in_Lab.jpg)
+![combined_color_threshold1](output_images/combined_color_thresh1.jpg)
+![combined_color_threshold2](output_images/combined_color_thresh2.jpg)
 ![sobel thresholding](output_images/sobel_thresh.jpg)
-![combined thresholding](output_images/combined_thresh.jpg)
+![combined thresholding1](output_images/combined_thresh1.jpg)
+![combined thresholding2](output_images/combined_thresh2.jpg)
 
 ####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -90,7 +101,8 @@ This resulted in the following source and destination points:
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![warped image](output_images/birds_eye_view.jpg)
+![warped image1](output_images/birds_eye_view1.jpg)
+![warped image2](output_images/birds_eye_view2.jpg)
 
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
